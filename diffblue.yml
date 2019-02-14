@@ -1,8 +1,6 @@
 # Tested on Deeptest release 1.10.0
 cbmcArguments:
   java-generate-no-comments: true
-  cover-function-only: false
-  do-not-test-methods-with-access: [ private ]
 units:
   - target:
     - dir: target/classes
@@ -201,26 +199,3 @@ phases:
     unwind: 3
     string-non-empty: true
     java-assume-inputs-non-null: true
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 3
-    max-nondet-string-length: 10
-    unwind: 3
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 3
-    max-nondet-string-length: 5
-    unwind: 10
-    string-non-empty: true
-    java-assume-inputs-non-null: true
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 20
-    max-nondet-string-length: 100
-    unwind: 10
