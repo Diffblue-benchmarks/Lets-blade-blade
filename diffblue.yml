@@ -1,243 +1,105 @@
-# Tested on Deeptest release 1.10.0
+buildCmd: cd dropwizard-util; mvn -e -X -Dmaven.test.skip=true compile
+testCmd: cd dropwizard-util; mvn test
 cbmcArguments:
   java-generate-no-comments: true
-units:
-  - target:
-    - dir: target/classes
-      file: com/blade/kit/json/SampleJsonSerializer.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/json/SampleJsonSerializer.java
-    # Child of SampleJsonSerializer.class
-    - dir: target/classes
-      file: com/blade/kit/DateKit.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/DateKit.java
-    # Child of SampleJsonSerializer.class
-    - dir: target/classes
-      file: com/blade/kit/ReflectKit.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/ReflectKit.java
-  - target:
-    - dir: target/classes
-      file: com/blade/ioc/reader/JarReaderImpl.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/reader/JarReaderImpl.java
-    # Child of JarReaderImpl.class
-    - dir: target/classes
-      file: com/blade/ioc/ClassReader.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/ClassReader.java
-    # Child of JarReaderImpl.class
-    - dir: target/classes
-      file: com/blade/ioc/bean/ClassInfo.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/bean/ClassInfo.java
-  - target:
-    - dir: target/classes
-      file: com/blade/kit/json/BeanSerializer.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/json/BeanSerializer.java
-    # Child of BeanSerializer.class
-    - dir: target/classes
-      file: com/blade/kit/StringKit.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/StringKit.java
-  - target:
-    - dir: target/classes
-      file: com/blade/ioc/reader/AbstractClassReader.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/reader/AbstractClassReader.java
-    # Child of AbstractClassReader.class
-    - dir: target/classes
-      file: com/blade/ioc/bean/Scanner.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/bean/Scanner.java
-    # Child of AbstractClassReader.class
-    - dir: target/classes
-      file: com/blade/kit/BladeKit.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/BladeKit.java
-  - target:
-    - dir: target/classes
-      file: com/blade/watcher/EnvironmentWatcher.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/watcher/EnvironmentWatcher.java
-    # Child of EnvironmentWatcher.class
-    - dir: target/classes
-      file: com/blade/Environment.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/Environment.java
-    # Child of EnvironmentWatcher.class
-    - dir: target/classes
-      file: com/blade/event/Event.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/event/Event.java
-    # Child of EnvironmentWatcher.class
-    - dir: target/classes
-      file: com/blade/event/EventType.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/event/EventType.java
-    # Child of EnvironmentWatcher.class
-    - dir: target/classes
-      file: com/blade/mvc/Const.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/Const.java
-    # Child of EnvironmentWatcher.class
-    - dir: target/classes
-      file: com/blade/mvc/WebContext.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/WebContext.java
-  - target:
-    - dir: target/classes
-      file: com/blade/ioc/bean/ValueInjector.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/bean/ValueInjector.java
-    # Child of ValueInjector.class
-    - dir: target/classes
-      file: com/blade/ioc/Injector.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/ioc/Injector.java
-  - target:
-    - dir: target/classes
-      file: com/blade/kit/BeanKit.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/kit/BeanKit.java
-    # Child of BeanKit.class
-    - dir: target/classes
-      file: com/blade/exception/BeanCopyException.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/exception/BeanCopyException.java
-  - target:
-    - dir: target/classes
-      file: com/blade/task/cron/CronExpression.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/task/cron/CronExpression.java
-  - target:
-    - dir: target/classes
-      file: com/blade/mvc/handler/WebSocketHandlerWrapper.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/handler/WebSocketHandlerWrapper.java
-    # Child of WebSocketHandlerWrapper.class
-    - dir: target/classes
-      file: com/blade/Blade.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/Blade.java
-    # Child of WebSocketHandlerWrapper.class
-    - dir: target/classes
-      file: com/blade/mvc/annotation/OnClose.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/annotation/OnClose.java
-    # Child of WebSocketHandlerWrapper.class
-    - dir: target/classes
-      file: com/blade/mvc/annotation/OnMessage.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/annotation/OnMessage.java
-    # Child of WebSocketHandlerWrapper.class
-    - dir: target/classes
-      file: com/blade/mvc/annotation/OnOpen.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/annotation/OnOpen.java
-    # Child of WebSocketHandlerWrapper.class
-    - dir: target/classes
-      file: com/blade/mvc/websocket/WebSocketContext.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/websocket/WebSocketContext.java
-  - target:
-    - dir: target/classes
-      file: com/blade/mvc/route/RouteBuilder.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/route/RouteBuilder.java
-    # Child of RouteBuilder.class
-    - dir: target/classes
-      file: com/blade/mvc/RouteContext.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/RouteContext.java
-    # Child of RouteBuilder.class
-    - dir: target/classes
-      file: com/blade/mvc/hook/Signature.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/hook/Signature.java
-    # Child of RouteBuilder.class
-    - dir: target/classes
-      file: com/blade/mvc/http/HttpMethod.class
-      sourceDir: src/main/java
-      sourceFile: com/blade/mvc/http/HttpMethod.java
 phases:
--
-  timeout: 120
-  cbmcArguments:
-    max-nondet-array-length: 10
-    unwind: 1
-    string-non-empty: true
-    java-assume-inputs-non-null: true
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 10
-    unwind: 1
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 20
-    unwind: 2
-    string-non-empty: true
-    java-assume-inputs-non-null: true
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 20
-    unwind: 2
--
-  timeout: 60
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 3
-    string-non-empty: true
-    java-assume-inputs-non-null: true
--
-  timeout: 120
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 3
--
-  timeout: 300
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 30
-    max-nondet-string-length: 10
-    unwind: 4
-    load-containing-class-only: true
-    string-non-empty: true
-    java-assume-inputs-non-null: true
--
-  timeout: 300
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 50
-    max-nondet-string-length: 50
-    unwind: 4
-    load-containing-class-only: true
--
-  timeout: 500
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 130
-    max-nondet-string-length: 110
-    unwind: 10
-    string-non-empty: true
-    java-assume-inputs-non-null: true
-    string-printable: true
--
-  timeout: 500
-  cbmcArguments:
-    classpath: '/tools/cbmc/models.jar:.'
-    max-nondet-array-length: 300
-    max-nondet-string-length: 100
-    unwind: 10
+  -
+    #0
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      depth: 1500
+      java-assume-inputs-non-null: true
+      java-max-vla-length: 48
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+    nextPhase:
+      not_analyzed: null
+      time_out: 3
+  -
+    #1
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      depth: 1500
+      java-assume-inputs-non-null: false
+      java-max-vla-length:  96
+      max-nondet-array-length: 20
+      max-nondet-string-length: 50
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 2
+    nextPhase:
+      time_out: 3
+  -
+    #2
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      depth: 3000
+      java-assume-inputs-non-null: false
+      java-max-vla-length:  192
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: 3
+  -
+    #3
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      depth: 1500
+      java-assume-inputs-non-null: true
+      java-max-vla-length: 48
+      load-containing-class-only: true
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+  -
+    #4
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      depth: 3000
+      java-assume-inputs-non-null: false
+      java-max-vla-length:  192
+      load-containing-class-only: true
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: 3
+  -
+    #5
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+      depth: 1500
+      java-assume-inputs-non-null: true
+      java-max-vla-length: 48
+      max-nondet-array-length: 10
+      max-nondet-string-length: 10
+      single-function-only: true
+      string-printable: true
+      throw-runtime-exceptions: false
+      unwind: 1
+  -
+    #6
+    timeout: 300
+    cbmcArguments:
+      classpath: '/tools/cbmc/models.jar:.'
+      depth: 3000
+      java-assume-inputs-non-null: false
+      java-max-vla-length:  192
+      max-nondet-array-length: 30
+      max-nondet-string-length: 100
+      single-function-only: true
+      string-printable: false
+      throw-runtime-exceptions: true
+      unwind: 3
